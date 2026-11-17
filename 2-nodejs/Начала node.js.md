@@ -1,22 +1,22 @@
 1) Проверяем установлен ли
 node -v
-![[Pasted image 20261117143039.png]]
+![[nodejs-1.png]]
 
 2) Выполняем команду подготовки конфигурации
 npm init -y
 
-![[Pasted image 20261117143554.png]]
+![[nodejs-2.png]]
 
 3) Устанавливаем пакет express
 
 npm i --save express
 
-![[Pasted image 20261117150707.png]]
+![[nodejs-4.png]]
 
 4) Создаем .gitignore и делаем запись node_modules/
 5) Можно удалить папку с модулями и package-lock.json
 6) Для развертывания проекта достаточно двух файлов (ну и +.gitignore )
-![[Pasted image 20261117151530.png]]
+![[nodejs-5.png]]
 
 7) Развертываем проект командой (папка проекта текущая)
 npm i
