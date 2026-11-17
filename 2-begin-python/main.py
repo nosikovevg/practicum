@@ -5,6 +5,11 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+@app.get("")
+def home():
+    return {"data": "message"}
+
+
 @app.get("/score")
 def score():
     approved = random.choice([False, True])
