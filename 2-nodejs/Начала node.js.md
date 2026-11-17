@@ -11,3 +11,9 @@ npm init -y
 
 npm i --save express
 
+![[Pasted image 20261117150707.png]]
+
+4) Создаем .gitignore и делаем запись node_modules/
+5) Можно удалить папку с модулями и package-lock.json
+6) 
+
