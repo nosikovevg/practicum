@@ -6,3 +6,8 @@ node -v
 npm init -y
 
 ![[Pasted image 20261117143554.png]]
+
+3) Устанавливаем пакет express
+
+npm i --save express
+
