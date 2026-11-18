@@ -31,7 +31,7 @@ async def iii():
     return posts
 
 @app.get("/items/{id}")
-async def iii(id):
+async def iii(id:int) -> dict:
         for post in posts:
              if post['id']== id:
                   return post
