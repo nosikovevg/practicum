@@ -39,7 +39,7 @@ async def indiv (id:int) -> dict:
              
         raise HTTPException(status_code=404, detail='Post not found')
 #*************************************************
-@app.get("/search")
+@app.get("/search") # аргумент может быть или не быть, его значение имеет тип int
 async def sss (post_id: Optional[int] = None) -> dict:
     if post_id:    
         for post in posts:
