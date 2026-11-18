@@ -6,12 +6,12 @@ from typing import Optional
 
 app = FastAPI()
 
-#**********************json***************************
+#**********************### 1 ###***************************
 @app.get("/")
 async def hhh():
     return {"data": "message"}
 
- #**********************html***************************
+ #**********************### 2 ###***************************
 @app.get("/aga", response_class=HTMLResponse)
 async def aaa():
     html ="<div style='background-color: yellow;'>" \
@@ -22,7 +22,7 @@ async def aaa():
     "<p>Вторая строка</p>" \
     "</div>"
     return html
-#*********************json****************************
+#*********************### 3 ###****************************
 @app.get("/bum")
 async def bbb():
     approved = random.choice([False, True])
@@ -34,12 +34,12 @@ posts = [
     {'id':3, 'title': 'News 3', 'body': 'Text 3'},
     {'id':4, 'title': 'News 4', 'body': 'Text 4'},
 ]
-#********************json*****************************
+#********************### 4 ###*****************************
 # вернет все значения списка posts
 @app.get("/items")
 async def iii():
     return posts
-
+#********************### 5 ###*****************************
 # Запрос типа: http://localhost:8080/items/3 
 @app.get("/items/{id}")
 async def indiv (id:int) -> dict:
@@ -48,7 +48,7 @@ async def indiv (id:int) -> dict:
                   return post
              
         raise HTTPException(status_code=404, detail='Post not found')
-#***********************json**************************
+#***********************### 6 ###**************************
 # Запрос типа: http://localhost:8080/search?post_id=3
 
 @app.get("/search") # аргумент может быть или не быть (опциональный), его значение имеет тип int
