@@ -16,6 +16,18 @@ app.get('/bum', (req, res) => {
         
     res.json({approved: approved})
 })
+////////////////////////////////////////
+const posts = [
+  { id: 1, title: 'News 1', body: 'Text 1' },
+  { id: 2, title: 'News 2', body: 'Text 2' },
+  { id: 3, title: 'News 3', body: 'Text 3' },
+  { id: 4, title: 'News 4', body: 'Text 4' },
+];
+/////////////////////////////////////////////
+app.get('/items', (req, res) => {
+    res.json(posts)
+})
+
 
 
 
