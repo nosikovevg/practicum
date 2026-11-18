@@ -1,6 +1,7 @@
-import fs from 'fs'
+FROM node:alpine
 
-fs.appendFile('my-file.txt', 'Файл создан Node.js', (err)=> {
-    if (err) throw err
-    console.log('Файл сохранен!')
-})
+WORKDIR /app
+
+COPY . .
+
+CMD ["node", "index.mjs"]
