@@ -5,16 +5,16 @@ app = FastAPI()
 
 
 @app.get("/")
-def home():
+def hhh():
     return {"data": "message"}
 
 
 @app.get("/aga")
-def home():
+def aaa():
     return {"data": "message"}
 
 @app.get("/bum")
-def score():
+def bbb():
     approved = random.choice([False, True])
     return {"approved": approved}
 
