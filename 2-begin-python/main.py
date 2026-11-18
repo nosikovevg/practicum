@@ -3,11 +3,11 @@ import uvicorn
 from fastapi import FastAPI
 app = FastAPI()
 
-@app.get("/")
+@app.get("/aga")
 def home():
     return {"data": "message"}
 
-@app.get("/score")
+@app.get("/bum")
 def score():
     approved = random.choice([False, True])
     return {"approved": approved}
