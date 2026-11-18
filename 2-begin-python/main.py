@@ -12,9 +12,10 @@ async def hhh():
     return {"data": "message"}
 
  
-@app.get("/aga")
+@app.get("/aga", response_class=HTMLResponse)
 async def aaa():
-    return {"data": "message"}
+    html ="<p style='background-color: red; color: blue;'>Пример текста</p>"
+    return html
 
 @app.get("/bum")
 async def bbb():
