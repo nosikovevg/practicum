@@ -26,11 +26,13 @@ posts = [
     {'id':3, 'title': 'News 3', 'body': 'Text 3'},
     {'id':4, 'title': 'News 4', 'body': 'Text 4'},
 ]
-
+#*************************************************
+# вернет все значения posts
 @app.get("/items")
 async def iii():
     return posts
 
+# Запрос типа: http://localhost:8080/items/3 
 @app.get("/items/{id}")
 async def indiv (id:int) -> dict:
         for post in posts:
@@ -39,7 +41,9 @@ async def indiv (id:int) -> dict:
              
         raise HTTPException(status_code=404, detail='Post not found')
 #*************************************************
-@app.get("/search") # аргумент может быть или не быть, его значение имеет тип int
+# Запрос типа: http://localhost:8080/search?post_id=3
+
+@app.get("/search") # аргумент может быть или не быть (опциональный), его значение имеет тип int
 async def sss (post_id: Optional[int] = None) -> dict:
     if post_id:    
         for post in posts:
