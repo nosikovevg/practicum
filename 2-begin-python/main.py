@@ -3,6 +3,12 @@ import uvicorn
 from fastapi import FastAPI
 app = FastAPI()
 
+
+@app.get("/")
+def home():
+    return {"data": "message"}
+
+
 @app.get("/aga")
 def home():
     return {"data": "message"}
