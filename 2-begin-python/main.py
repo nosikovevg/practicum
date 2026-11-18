@@ -14,7 +14,11 @@ async def hhh():
  
 @app.get("/aga", response_class=HTMLResponse)
 async def aaa():
-    html ="<div style='background-color: yellow;'><p style='background-color: green; color: blue;font-size: 24px;background-color: yellow;'>Пример текста</p></div>"
+    html ="<div style='background-color: yellow;'>" \
+    "<p style='background-color: green; color: blue;font-size: 24px;background-color: yellow;'>" \
+    "" \
+    "Пример текста" \
+    "</p></div>"
     return html
 
 @app.get("/bum")
