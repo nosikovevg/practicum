@@ -30,7 +30,7 @@ app.get('/items', (req, res) => {
 })
 
 ///////////////### 5 ###//////////////////////////
-// Запрос типа: http://localhost:8080/items/3
+// Запрос типа: http://localhost:3000/items/3
 app.get('/items/:id', (req, res) => {
   // 1. Получаем параметр из URL и переводим его в число (как id: int в FastAPI)
   const id = Number(req.params.id);
@@ -49,7 +49,7 @@ app.get('/items/:id', (req, res) => {
 
 
 ///////////////### 6 ###//////////////////////////
-// Запрос типа: http://localhost:8080/search?post_id=3
+// Запрос типа: http://localhost:3000/search?post_id=3
 app.get('/search', (req, res) => {
   // 1. Достаём необязательный параметр из query-строки (?post_id=...)
   const { post_id } = req.query;
