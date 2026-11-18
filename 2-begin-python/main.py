@@ -18,7 +18,9 @@ async def aaa():
     "<p style='background-color: green; color: blue;font-size: 24px;background-color: yellow;'>" \
     "" \
     "Пример текста" \
-    "</p></div>"
+    "</p>" \
+    "<p>Вторая строка</p>" \
+    "</div>"
     return html
 
 @app.get("/bum")
