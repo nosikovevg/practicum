@@ -1,6 +1,7 @@
 import random
 import uvicorn
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
 from typing import Optional
 
 app = FastAPI()
@@ -27,7 +28,7 @@ posts = [
     {'id':4, 'title': 'News 4', 'body': 'Text 4'},
 ]
 #*************************************************
-# вернет все значения posts
+# вернет все значения списка posts
 @app.get("/items")
 async def iii():
     return posts
