@@ -1,6 +1,6 @@
 import random
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 app = FastAPI()
 
 
@@ -30,7 +30,13 @@ posts = [
 async def iii():
     return posts
 
-
+@app.get("/items/{id}")
+async def iii(id):
+        for post in posts:
+             if post['id']== id:
+                  return post
+             
+        raise HTTPException(status_code=404, detail='Post not found')
 
 if __name__ == '__main__':
     uvicorn.run("main:app", host='0.0.0.0', port=8080, reload=True)
