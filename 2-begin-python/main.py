@@ -1,6 +1,8 @@
 import random
 import uvicorn
 from fastapi import FastAPI, HTTPException
+from typing import Optional
+
 app = FastAPI()
 
 
@@ -37,6 +39,19 @@ async def indiv (id:int) -> dict:
              
         raise HTTPException(status_code=404, detail='Post not found')
 #*************************************************
+@app.get("/search")
+async def sss (post_id: Optional[int] = None) -> dict:
+    if post_id:    
+        for post in posts:
+             if post['id']== post_id:
+                  return post
+             
+        raise HTTPException(status_code=404, detail='Post not found')
+    else:
+         return{"data": "No post id provided"}
+
+#*************************************************
+
 if __name__ == '__main__':
     uvicorn.run("main:app", host='0.0.0.0', port=8080, reload=True)
     
