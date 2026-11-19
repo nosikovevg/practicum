@@ -4,5 +4,4 @@ async function getDevices() {
         console.log(device.kind, device.label, device.deviceId);
     });
 }
-
 getDevices();
