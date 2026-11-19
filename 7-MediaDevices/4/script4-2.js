@@ -1,14 +1,10 @@
-navigator.mediaDevices.getUserMedia({ video: true})
+navigator.mediaDevices.getUserMedia({ audio: true})
  .then(stream => {
-    const [videoTrack] = stream.getVideoTracks();
-    return videoTrack.applyConstraints({
-        width: 1280,
-        height: 720
-    }).then (()=> {
-        console.log('Разрешение применено');
+    const [audioTrack] = stream.getAudioTracks();
+    audioTrack.enabled=false;
+    console.log('Микрофон выключен');
     })
      .catch(error => {
         console.error('Ошибка доступа к устройству', error);
      });
 
- });
