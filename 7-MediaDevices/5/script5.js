@@ -19,6 +19,6 @@ navigator.mediaDevices.getUserMedia({ audio: true})
     })
  })
      .catch(error => {
-        console.error('Ошибка доступа к устройству', error);
+        console.error('Ошибка при получении доступа к аудио устройству', error);
      });
 
