@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech in JavaScript</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Верхний розовый блок */
+    .header {
+      background-color: #fceef5;
+      padding: 32px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffffff;
+      color: #a8557a;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #111;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      font-size: 18px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      font-weight: 700;
+      color: #222;
+      margin-top: 4px;
+    }
+
+    .hint {
+      margin-top: 20px;
+      font-size: 15px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Средний блок с вводом */
+    .controls {
+      padding: 32px;
+      display: flex;
+      gap: 12px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #555c68;
+    }
+
+    button {
+      background-color: #555c68;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #404650;
+    }
+
+    /* Нижний блок с кодом */
+    .code-block {
+      background-color: #fceef5;
+      padding: 28px 32px;
+      font-family: "Fira Code", Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #222;
+      overflow-x: auto;
+    }
+
+    .kw { color: #b5446e; font-weight: 600; }
+    .fn { color: #2b6cb0; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="header">
+      <div class="badge">🏷️ JS</div>
+      <h1>TEXT <span>TO</span> SPEECH</h1>
+      <div class="subtitle">in JavaScript</div>
+      <div class="hint">🔊 Turn up volume</div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="textInput" value="How are you?" placeholder="Enter text...">
+      <button id="speakBtn">Speak</button>
+    </div>
+
+    <pre class="code-block"><code><span class="kw">const</span> text = input.value;
+
+<span class="kw">const</span> utterance =
+  <span class="kw">new</span> <span class="fn">SpeechSynthesisUtterance</span>(text);
+
+window.speechSynthesis.<span class="fn">speak</span>(utterance);</code></pre>
+  </div>
+
+  <script>
+    const input = document.getElementById('textInput');
+    const button = document.getElementById('speakBtn');
+
+    button.addEventListener('click', () => {
+      const text = input.value;
+      const utterance = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(utterance);
+    });
+  </script>
+
+</body>
+</html>
