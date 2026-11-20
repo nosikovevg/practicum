@@ -71,6 +71,12 @@ startRecBtn.addEventListener("click", async () =>{
       mediaRecorder.start();
 
       startRecBtn.disabled =true;
-      stopRecBtn.disabled =true;
+      stopRecBtn.disabled =false;
    } catch (err){}
 });
+
+stopRecBtn.addEventListener("click", ()=>{
+   if(mediaRecorder){
+      mediaRecorder.stop();
+   }
+})
