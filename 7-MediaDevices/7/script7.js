@@ -4,3 +4,14 @@ const stopRecBtn = document.getElementById('stopRec');
 const audioPlayer = document.getElementById('audioPlayer');
 const micSelect = document.getElementById('micSelect');
 
+let mediaRecorder;
+let audioChunks =[];
+let currentStream;
+
+async function getMicrophones() {
+   try {
+      await navigator.mediaDevices.getUserMedia({
+         audio: true,
+      });
+   } catch (err) {}
+}
