@@ -43,5 +43,20 @@ startRecBtn.addEventListener("click", async () =>{
             currentStream = null;
          }
       }
+
+      if (!currentStream){
+         currentStream = await navigator.mediaDevices.getUserMedia({
+            audio: {
+               deviceId: {
+                  exact: selectedDeviceId, 
+               }
+            },
+         })
+      }
+
+      MediaRecorder = new mediaRecorder(currentStream);
+      audioChunks =[];
+
+      mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
    } catch (err){}
 });
