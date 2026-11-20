@@ -1,2 +1,4 @@
 const video = document.getElementById('video');
-const audio = document.getElementById('audio');
+
+const toggleAudioBtn = document.getElementById('toggleAudio');
+const toggleVideoBtn = document.getElementById('toggleVideo');
