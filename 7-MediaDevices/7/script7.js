@@ -38,7 +38,10 @@ startRecBtn.addEventListener("click", async () =>{
          const currentAudioTrack = currentStream.getAudioTracks()[0];
          const currentDeviceId = currentAudioTrack.getSettings().deviceId;
 
-         if ()
+         if (currentDeviceId !== selectedDeviceId) {
+            currentStream.getTracks().forEach(track => track.stop());
+            currentStream = null;
+         }
       }
    } catch (err){}
 });
