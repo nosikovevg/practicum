@@ -19,3 +19,18 @@ async function startStream(){
 }
 
 startStream();
+
+toggleAudioBtn.addEventListener('click', () => {
+   if (!stream) {
+      return;
+   }
+   
+   const [audioTrack] = stream.getAudioTracks();
+
+   audioTrack.enabled = !audioTrack.enabled;
+
+   toggleAudioBtn.textContent = audioTrack.enabled ?
+                           'Микрофон вкл': 'Микрофон выкл';
+   toggleAudioBtn.classList.toggle('not-active');
+
+})
