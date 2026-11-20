@@ -48,3 +48,13 @@ toggleVideoBtn.addEventListener('click', () => {
                            'Видео вкл': 'Видео выкл';
    toggleVideoBtn.classList.toggle('not-active');
 })
+
+stopBtn.addEventListener('click', ()=>{
+   if (!stream) {
+      return;
+   }
+
+   stream.getTracks().forEach((track) =>{
+       track.stop();
+   })
+})
