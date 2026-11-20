@@ -23,7 +23,10 @@ async function getMicrophones() {
          const option = document.createElement("option");
          option.value = mic.deviceId;
          option.textContent = mic.label;
+         
          micSelect.appendChild(option);
       })
-   } catch (err) {}
+   } catch (err) {
+      console.error(err);
+   }
 }
