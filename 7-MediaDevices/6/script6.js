@@ -56,5 +56,13 @@ stopBtn.addEventListener('click', ()=>{
 
    stream.getTracks().forEach((track) =>{
        track.stop();
-   })
+   });
+
+   video.srcObject = null;
+
+   toggleAudioBtn.disabled = true;
+   toggleVideoBtn.disabled = true;
+   stopBtn.disabled = true;
+
+   stopBtn.textContent = 'Трансляция завершена';
 })
