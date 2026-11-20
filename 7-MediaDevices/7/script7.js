@@ -80,3 +80,6 @@ stopRecBtn.addEventListener("click", ()=>{
       mediaRecorder.stop();
    }
 })
+
+navigator.mediaDevices.addEventListener("devicechange", getMicrophones);
+getMicrophones();
