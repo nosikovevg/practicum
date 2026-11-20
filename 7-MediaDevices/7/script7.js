@@ -14,5 +14,7 @@ async function getMicrophones() {
          audio: true,
       });
       const devices = await navigator.mediaDevices.enumerateDevices();
+      const microphones = devices
+                           .filter(({kind}) => kind === 'audioinput');
    } catch (err) {}
 }
