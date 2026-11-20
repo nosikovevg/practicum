@@ -16,5 +16,8 @@ async function getMicrophones() {
       const devices = await navigator.mediaDevices.enumerateDevices();
       const microphones = devices
                            .filter(({kind}) => kind === 'audioinput');
+
+      micSelect.innerHTML ="";
+      
    } catch (err) {}
 }
