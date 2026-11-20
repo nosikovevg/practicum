@@ -27,7 +27,7 @@
 </body>
 <script>
 //- функции
-const c1 = (val, cmt="")=>{console.log(cmt,val)}
+const c1 = (val, cmt="") => {console.log(cmt,val)}
 const e1 = (id)=> document.getElementById(id);
 
 let flag_recog = false
@@ -74,7 +74,7 @@ const SpeechRecognition =
     if (e.results[i].isFinal) {
         let last_text = e.results[i][0].transcript.trim()
 
-        el('word').value = last_text;
+        e1('word').value = last_text;
         if(last_text in Colors) {
             let color = Colors[last_text]
             console.log(color)
