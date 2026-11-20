@@ -57,6 +57,18 @@ const SpeechRecognition =
  //-- обработчики событий запуска, ошибки и окончания распознования речи:
  recognition.onstart = () => {c1('Распознавание голоса запущено')}
  recognition.onerror = ({error}) => {c1(error)}
+ recognition.onend = () => {c1('Распознавание голоса закончено')}
+
+ //--цвета для оформления квадрата
+ const Colors={
+    "белый":'white',
+    "чёрный":'black',
+    "красный":'red',
+    "синий":'blue',
+    "зеленый":'green',
+    "жёлтый":'yellow',
+ }
+
  
 </script>
 </html>
