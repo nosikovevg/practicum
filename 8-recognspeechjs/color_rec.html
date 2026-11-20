@@ -45,6 +45,18 @@ const stop_recogn =()=>{
     flag_recog =false
 }
 
-// --
+// --Создаем и настраиваем экземпляр SpeechRecognition:
+const SpeechRecognition =
+ window.SpeechRecognition || window.webkitSpeechRecognition
+
+ const recognition = new SpeechRecognition()
+ recognition.continuous = true; // продолжить после первого результата
+ recognition.interimResults = true; // обработка промежуточных результатов
+ recognition.lang = 'ru-Ru'; //язык
+
+ //-- обработчики событий запуска, ошибки и окончания распознования речи:
+ recognition.onstart = () => {c1('Распознавание голоса запущено')}
+ recognition.onerror = ({error}) => {c1(error)}
+ 
 </script>
 </html>
