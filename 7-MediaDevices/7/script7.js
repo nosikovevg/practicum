@@ -30,3 +30,15 @@ async function getMicrophones() {
       console.error(err);
    }
 }
+
+startRecBtn.addEventListener("click", async () =>{
+   try {
+         const selectedDeviceId = micSelect.value;
+      if (currentStream){
+         const currentAudioTrack = currentStream.getAudioTracks()[0];
+         const currentDeviceId = currentAudioTrack.getSettings().deviceId;
+
+         if ()
+      }
+   } catch (err){}
+});
