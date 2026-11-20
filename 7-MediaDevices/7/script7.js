@@ -54,7 +54,7 @@ startRecBtn.addEventListener("click", async () =>{
          })
       }
 
-      MediaRecorder = new mediaRecorder(currentStream);
+      mediaRecorder = new MediaRecorder(currentStream);
       audioChunks =[];
 
       mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
