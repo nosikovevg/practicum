@@ -58,5 +58,14 @@ startRecBtn.addEventListener("click", async () =>{
       audioChunks =[];
 
       mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+
+      mediaRecorder.onstop = () => {
+         const audioBlob = new Blob(audioChunks, {type: 'audio/webm'});
+         const audioURL = URL.createObjectURL(audioBlob);
+         audioPlayer.src = audioURL;
+
+         startRecBtn.disabled = false;
+         stopRecBtn.disabled = true;
+      }
    } catch (err){}
 });
