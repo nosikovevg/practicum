@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой сайт</title>
+    <title>navigator.mediaDevices</title>
         
-    
-    <title>Document</title>
-
 </head>
-
 <body>
-  <h1>Привет, мир!</h1>
-  <video id="video" autoplay></video>
-  <div class="controls">
-    <button id="toggleAudio"> Микрофон вкл</button>
-    <button id="toggleVideo"> Видео вкл</button>
-    <button id="stopStream"> Остановить трансляцию </button>
-  </div>
-  
-   
+  <div class="record-panel">
+    <h2>Выберите микрофон</h2>
+    <select id="micSelect" class="device-select"></select>
+    <div class="audio-controls">
+      <button id="startRec"> Запись </button>
+      <button id="stopRec" disabled> Стоп </button>
+    </div>
+    <audio id="audioPlayer" controls></audio>
+  </div>    
 </body>
-<script src="script7.js" defer></script>
+<script src="script7.js"></script>
 </html>
