@@ -13,5 +13,6 @@ async function getMicrophones() {
       await navigator.mediaDevices.getUserMedia({
          audio: true,
       });
+      const devices = await navigator.mediaDevices.enumerateDevices();
    } catch (err) {}
 }
