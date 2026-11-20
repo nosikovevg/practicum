@@ -26,6 +26,25 @@
     </div>
 </body>
 <script>
-    
+//- функции
+const c1 = (val, cmt="")=>{console.log(cmt,val)}
+const e1 = (id)=> document.getElementById(id);
+
+let flag_recog = false
+
+const start_recogn = () => {
+    if(!flag_recog){
+        recognition.start()
+        flag_recog = true
+    }
+    el('word').value =''
+}
+
+const stop_recogn =()=>{
+    recognition.abort()
+    flag_recog =false
+}
+
+// --
 </script>
 </html>
