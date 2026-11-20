@@ -18,6 +18,11 @@ async function getMicrophones() {
                            .filter(({kind}) => kind === 'audioinput');
 
       micSelect.innerHTML ="";
-      
+
+      microphones.forEach((mic) => {
+         const option = document.createElement("option");
+
+         micSelect.appendChild(option);
+      })
    } catch (err) {}
 }
