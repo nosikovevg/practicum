@@ -66,6 +66,11 @@ startRecBtn.addEventListener("click", async () =>{
 
          startRecBtn.disabled = false;
          stopRecBtn.disabled = true;
-      }
+      };
+
+      mediaRecorder.start();
+
+      startRecBtn.disabled =true;
+      stopRecBtn.disabled =true;
    } catch (err){}
 });
