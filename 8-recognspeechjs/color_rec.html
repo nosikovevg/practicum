@@ -69,6 +69,17 @@ const SpeechRecognition =
     "жёлтый":'yellow',
  }
 
- 
+ recognition.onresult = (e) => {
+    let i = e.results.length -1
+    if (e.results[i].isFinal) {
+        let last_text = e.results[i][0].transcript.trim()
+
+        el('word').value = last_text;
+        if(last_text in Colors) {
+            let color = Colors[last_text]
+            console.log(color)
+        }
+    }
+ }
 </script>
 </html>
